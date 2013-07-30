@@ -1,0 +1,62 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+A	/Users/jon/Projects/alohabot/example.py	43;"	c	line:43
+B	/Users/jon/Projects/alohabot/example.py	54;"	c	line:54
+ConvertSeconds	/Users/jon/Projects/alohabot/speaker.py	328;"	m	line:328	class:Speaker	access:public
+JabberBot	/Users/jon/Projects/alohabot/jabberbot.py	70;"	c	line:70
+Speaker	/Users/jon/Projects/alohabot/speaker.py	12;"	c	line:12
+Word	/Users/jon/Projects/alohabot/modules/defination.py	100;"	f	line:100	function:bot_unlock	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	101;"	f	line:101	function:bot_unlock	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	12;"	f	line:12	function:bot_get	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	13;"	f	line:13	function:bot_get	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	22;"	f	line:22	function:bot_get/Word	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	24;"	f	line:24	function:bot_get/Word/Word	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	36;"	f	line:36	function:bot_set	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	38;"	f	line:38	function:bot_set	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	39;"	f	line:39	function:bot_set/Word	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	47;"	f	line:47	function:bot_set/Word/Word	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	53;"	f	line:53	function:bot_set/Word/Word/Word	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	72;"	f	line:72	function:bot_lock	access:public
+Word	/Users/jon/Projects/alohabot/modules/defination.py	73;"	f	line:73	function:bot_lock	access:public
+__init__	/Users/jon/Projects/alohabot/example.py	45;"	m	line:45	class:A	access:public
+__init__	/Users/jon/Projects/alohabot/jabberbot.py	74;"	m	line:74	class:JabberBot	access:public
+adduserlist	/Users/jon/Projects/alohabot/jabberbot.py	147;"	m	line:147	class:JabberBot	access:public
+bot_bible	/Users/jon/Projects/alohabot/modules/bible.py	4;"	f	line:4	access:public
+bot_ce	/Users/jon/Projects/alohabot/modules/dictionary.py	23;"	f	line:23	access:public
+bot_d	/Users/jon/Projects/alohabot/modules/dictionary.py	43;"	f	line:43	access:public
+bot_dc	/Users/jon/Projects/alohabot/modules/dice.py	4;"	f	line:4	access:public
+bot_ec	/Users/jon/Projects/alohabot/modules/dictionary.py	3;"	f	line:3	access:public
+bot_get	/Users/jon/Projects/alohabot/modules/defination.py	6;"	f	line:6	access:public
+bot_list	/Users/jon/Projects/alohabot/speaker.py	36;"	m	line:36	class:Speaker	access:public
+bot_lock	/Users/jon/Projects/alohabot/modules/defination.py	66;"	f	line:66	access:public
+bot_quote	/Users/jon/Projects/alohabot/modules/quote.py	24;"	f	line:24	access:public
+bot_roll	/Users/jon/Projects/alohabot/modules/roll.py	5;"	f	line:5	access:public
+bot_set	/Users/jon/Projects/alohabot/modules/defination.py	31;"	f	line:31	access:public
+bot_setquote	/Users/jon/Projects/alohabot/modules/quote.py	7;"	f	line:7	access:public
+bot_unlock	/Users/jon/Projects/alohabot/modules/defination.py	94;"	f	line:94	access:public
+bot_w	/Users/jon/Projects/alohabot/modules/weather.py	6;"	f	line:6	access:public
+breakUp	/Users/jon/Projects/alohabot/speaker.py	302;"	m	line:302	class:Speaker	access:public
+breakUpM	/Users/jon/Projects/alohabot/speaker.py	315;"	m	line:315	class:Speaker	access:public
+callback_message	/Users/jon/Projects/alohabot/jabberbot.py	163;"	m	line:163	class:JabberBot	access:public
+connect	/Users/jon/Projects/alohabot/jabberbot.py	108;"	m	line:108	class:JabberBot	access:public
+do_something	/Users/jon/Projects/alohabot/example.py	60;"	m	line:60	class:B	access:public
+forever	/Users/jon/Projects/alohabot/speaker.py	350;"	f	line:350	access:public
+get_name	/Users/jon/Projects/alohabot/example.py	48;"	m	line:48	class:A	access:public
+get_name	/Users/jon/Projects/alohabot/example.py	64;"	m	line:64	class:B	access:public
+help_callback	/Users/jon/Projects/alohabot/jabberbot.py	217;"	m	line:217	class:JabberBot	access:public
+idle_proc	/Users/jon/Projects/alohabot/jabberbot.py	228;"	m	line:228	class:JabberBot	access:public
+log	/Users/jon/Projects/alohabot/jabberbot.py	104;"	m	line:104	class:JabberBot	access:public
+module_level_function	/Users/jon/Projects/alohabot/example.py	38;"	f	line:38	access:public
+optFail	/Users/jon/Projects/alohabot/modules/defination.py	124;"	f	line:124	access:public
+optFail	/Users/jon/Projects/alohabot/speaker.py	348;"	m	line:348	class:Speaker	access:public
+optSuccess	/Users/jon/Projects/alohabot/modules/defination.py	122;"	f	line:122	access:public
+optSuccess	/Users/jon/Projects/alohabot/speaker.py	346;"	m	line:346	class:Speaker	access:public
+quit	/Users/jon/Projects/alohabot/jabberbot.py	126;"	m	line:126	class:JabberBot	access:public
+send	/Users/jon/Projects/alohabot/jabberbot.py	138;"	m	line:138	class:JabberBot	access:public
+serve_forever	/Users/jon/Projects/alohabot/jabberbot.py	232;"	m	line:232	class:JabberBot	access:public
+unknown_command	/Users/jon/Projects/alohabot/jabberbot.py	206;"	m	line:206	class:JabberBot	access:public
+unknown_command	/Users/jon/Projects/alohabot/speaker.py	43;"	m	line:43	class:Speaker	access:public

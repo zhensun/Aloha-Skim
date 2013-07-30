@@ -1,0 +1,126 @@
+﻿from pysqlite2 import dbapi2 as sqlite
+import datetime
+
+# Path for database file
+dbPath = '/home/sun/src/alohabot/spdb.db'
+
+def bot_get(mess, nick, botCmd):
+    """Get a user-defined word"""
+    
+    if (len(botCmd) == 1):
+        message = u"/me 抓抓头发说：格式错误。请按照“!get 词条”格式输入。"
+    else:    
+        defWord = botCmd[1].split(" ", 1)
+        sql = 'SELECT * FROM defword WHERE word like "' + defWord[0] + '"'
+    
+        connection = sqlite.connect(dbPath)
+        cursor = connection.cursor()
+        cursor.execute(sql)
+    
+        result = cursor.fetchone()
+        #
+        if (result != None):
+            message = "/me (" + result[2] + ") " + defWord[0] + ": \n" + result[1] + " --" + result[3]
+            if (result[4] == 1):
+                message = message + " (locked)"
+        else:
+            message = optFail(u"词条还没有被定义。")
+        cursor.close()
+        connection.close()
+    return message
+
+def bot_set(mess, nick, botCmd):
+    """Set a word's defination"""
+    if (len(botCmd) == 1):
+        message = u"/me 抓抓头发说：定义格式错误。请按照“!set 词条 定义”格式输入。"
+    else:
+        defWord = botCmd[1].split(" ", 1)
+    
+        if (len(defWord) == 2):
+            sql = 'SELECT * FROM defword WHERE word like "' + defWord[0] + '"'
+
+            connection = sqlite.connect(dbPath)
+            cursor = connection.cursor()
+            cursor.execute(sql)
+
+            result = cursor.fetchone()
+            if (result == None):
+                cursor.execute('INSERT INTO defword VALUES (?, ?, ?, ?, 1)',(defWord[0], defWord[1], nick, datetime.datetime.ctime(datetime.datetime.now())))
+                connection.commit()
+                message = optSuccess(u"词条定义完成。")
+                
+            else:
+                if (result[4] == 0):
+                    cursor.execute('UPDATE defword SET def = ? , owner = ? , locked = 1 WHERE word = ?', (defWord[1], nick, result[0]))
+                    connection.commit()
+                    message = optSuccess(u"词条定义完成。")
+                elif (result[4] == 1):
+                    message = optFail(u'词条已经被定义，重新定义请先用 !unlock 解锁。')
+                elif (result[4] == 2):
+                    message = optFail(u'该词条已经被锁住。')
+            cursor.close()
+            connection.close()
+        else:
+            message = u"/me 抓抓头发说：定义格式错误。请按照“!set 词条 定义”格式输入。"
+    return message
+
+def bot_lock(mess, nick, botCmd):
+    """Lock defined word"""
+
+    if (len(botCmd) == 1):
+        message = u"/me 抓抓头发说：格式错误。请按照“!lock 词条”格式输入。"
+    else:    
+        defWord = botCmd[1].split(" ", 1)
+        sql = 'SELECT * FROM defword WHERE word like "' + defWord[0] + '"'
+
+        connection = sqlite.connect(dbPath)
+        cursor = connection.cursor()
+        cursor.execute(sql)
+
+        result = cursor.fetchone()
+        #
+        if (result != None):
+            if(result[4] != 1):
+                cursor.execute('UPDATE defword SET locked = 1 WHERE word = "' + result[0] + '"')
+                connection.commit()
+                message = optSuccess(u'词条被锁住。')
+            else:
+                message = optFail(u'词条已经被锁住。')
+        else:
+            message = optFail(u"词条还没有被定义。")
+        cursor.close()
+        connection.close()
+    return message
+
+def bot_unlock(mess, nick, botCmd):
+    """Unlock defined word"""
+
+    if (len(botCmd) == 1):
+        message = u"/me 抓抓头发说：解锁格式错误。请按照“!lock 词条”格式输入。"
+    else:    
+        defWord = botCmd[1].split(" ", 1)
+        sql = 'SELECT * FROM defword WHERE word like "' + defWord[0] + '"'
+
+        connection = sqlite.connect(dbPath)
+        cursor = connection.cursor()
+        cursor.execute(sql)
+
+        result = cursor.fetchone()
+        #
+        if (result != None):
+            if(result[4] != 0):
+                cursor.execute('UPDATE defword SET locked = 0 WHERE word = "' + result[0] + '"')
+                connection.commit()
+                message = optSuccess(u'词条被解锁。')
+            else:
+                message = optFail(u'词条没有被锁住。')
+        else:
+            message = optFail(u"词条还没有被定义。")
+        cursor.close()
+        connection.close()
+    return message
+    
+def optSuccess(message):
+    return u'/me 点点头：“' + message + u"”"
+def optFail(message):
+    return u'/me 摇摇头：“' + message + u"”"
